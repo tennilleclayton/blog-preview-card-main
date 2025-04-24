@@ -1,0 +1,182 @@
+@layer fonts {
+  /* figtree-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/fonts/figtree-v7-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* figtree-800 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 800;
+    src: url("/fonts/figtree-v7-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+}
+
+@layer colors {
+  :root {
+    --c-gray-950: hsl(0, 0%, 7%);
+    --c-gray-500: hsl(0, 0%, 42%);
+    --c-white: hsl(0, 0%, 100%);
+    --c-yellow: hsl(47, 88%, 63%);
+
+    --color-background-yellow: var(--c-yellow);
+    --color-background-white: var(--c-white);
+    --color-border: var(--c-gray-950);
+
+    --color-text-yellow: var(--c-yellow);
+    --color-text-dark: var(--c-gray-950);
+    --color-text-light: var(--c-gray-500);
+  }
+}
+
+@layer global {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background-yellow);
+    font-family: "Figtree", Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+    line-height: 150%;
+    letter-spacing: 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  p {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a:link,
+  a:active,
+  a:visited {
+    text-decoration: none;
+    color: var(--color-text-dark);
+  }
+  .contain-wrapper {
+    display: grid;
+  }
+
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@layer typography {
+}
+
+@layer card {
+  /* #preview-card-container{
+        min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    } */
+
+  .preview-card-container {
+    background-color: var(--color-background-white);
+    width: 385px;
+    /* height: 522px; */
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    box-shadow: 8px 8px 0 0 var(--color-border);
+    padding: 1.5rem;
+  }
+
+  .preview-img {
+    border-radius: 10px;
+    width: 336px;
+    height: 200px;
+  }
+
+  .preview-card-content {
+    margin-top: 24px;
+  }
+
+  .yellow-bg h3 {
+    background-color: var(--color-background-yellow);
+    padding: 4px 12px;
+    width: 82px;
+    /* justify-self: start; */
+    align-self: center;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+
+  .published-date {
+    color: var(--color-text-dark);
+    font-size: 0.875rem;
+    margin: 12px 0;
+  }
+
+  .blog-title {
+    margin-bottom: 12px;
+  }
+
+  a:hover .blog-title {
+    color: var(--color-text-yellow);
+  }
+
+  .blog-content {
+    margin-bottom: 24px;
+  }
+  .preview-card-arthur {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar-img {
+    width: 32px;
+  }
+  .arthur-name p {
+    color: var(--color-text-dark);
+    font-size: 0.875rem;
+    font-weight: 800;
+    margin-left: 1rem;
+  }
+
+  @media screen and (max-width: 375px) {
+    .preview-card-container {
+      width: 90%;
+    }
+
+    .preview-img {
+      width: 100%;
+    }
+  }
+}
